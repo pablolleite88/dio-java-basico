@@ -1,0 +1,110 @@
+# Comandos GIT
+
+### 1. Criar e clonar repositórios
+
+**Criar um repositório:**
+```bash
+git init
+```
+Este comando inicializa um novo repositório Git no diretório atual.
+
+**Clonar um repositório:**
+```bash
+git clone <url-do-repositorio>
+```
+Este comando clona um repositório remoto para o seu computador local.
+
+### 2. Salvar alterações no repositório local
+
+**Adicionar arquivos ao índice (staging area):**
+```bash
+git add <arquivo-ou-diretorio>
+```
+Este comando adiciona arquivos ou diretórios específicos ao índice.
+
+**Confirmar (commit) as alterações:**
+```bash
+git commit -m "mensagem do commit"
+```
+Este comando cria um commit com as alterações adicionadas ao índice e uma mensagem descritiva.
+
+### 3. Desfazer alterações no repositório local
+
+**Desfazer alterações em um arquivo não comitado:**
+```bash
+git checkout -- <arquivo>
+```
+Este comando restaura o arquivo ao estado do último commit.
+
+**Desfazer um commit local:**
+```bash
+git reset --hard <hash-do-commit>
+```
+Este comando desfaz todos os commits após o commit especificado, removendo as alterações do índice e do diretório de trabalho.
+
+### 4. Enviar e baixar alterações com o repositório remoto
+
+**Enviar (push) alterações para o repositório remoto:**
+```bash
+git push origin <nome-da-branch>
+```
+Este comando envia os commits da branch local para o repositório remoto.
+
+**Baixar (pull) alterações do repositório remoto:**
+```bash
+git pull origin <nome-da-branch>
+```
+Este comando baixa e mescla as alterações do repositório remoto para a branch local.
+
+### 5. Criar, mesclar, deletar e tratar conflitos em branches
+
+**Criar uma nova branch:**
+```bash
+git branch <nome-da-branch>
+```
+Este comando cria uma nova branch.
+
+**Trocar para uma branch existente:**
+```bash
+git checkout <nome-da-branch>
+```
+Este comando troca para a branch especificada.
+
+**Mesclar uma branch:**
+```bash
+git merge <nome-da-branch>
+```
+Este comando mescla a branch especificada na branch atual.
+
+**Deletar uma branch:**
+```bash
+git branch -d <nome-da-branch>
+```
+Este comando deleta a branch especificada.
+
+**Tratar conflitos de mesclagem:**
+Quando ocorrerem conflitos, edite os arquivos conflitantes para resolver os conflitos e depois adicione e comite as alterações:
+```bash
+git add <arquivo-conflitante>
+git commit -m "Resolvido conflito de mesclagem"
+```
+
+### 6. Comandos úteis com branches no dia a dia
+
+**Listar todas as branches:**
+```bash
+git branch
+```
+Este comando lista todas as branches locais.
+
+**Renomear uma branch:**
+```bash
+git branch -m <novo-nome>
+```
+Este comando renomeia a branch atual.
+
+**Verificar o histórico de commits:**
+```bash
+git log
+```
+Este comando exibe o histórico de commits da branch atual.
