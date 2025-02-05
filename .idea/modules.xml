@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ContaBanco/ContaBanco.iml" filepath="$PROJECT_DIR$/ContaBanco/ContaBanco.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Metodo/Metodo.iml" filepath="$PROJECT_DIR$/Metodo/Metodo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Metodo_Carro/Metodo_Carro.iml" filepath="$PROJECT_DIR$/Metodo_Carro/Metodo_Carro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MeuPrimeiroProjetoJava/MeuPrimeiroProjetoJava.iml" filepath="$PROJECT_DIR$/MeuPrimeiroProjetoJava/MeuPrimeiroProjetoJava.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Operadores/Operadores.iml" filepath="$PROJECT_DIR$/Operadores/Operadores.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TiposPrimitivos/TiposPrimitivos.iml" filepath="$PROJECT_DIR$/TiposPrimitivos/TiposPrimitivos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/dio-java-basico.iml" filepath="$PROJECT_DIR$/.idea/dio-java-basico.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-anatomia-classes/java-anatomia-classes.iml" filepath="$PROJECT_DIR$/java-anatomia-classes/java-anatomia-classes.iml" />
+    </modules>
+  </component>
+</project>
