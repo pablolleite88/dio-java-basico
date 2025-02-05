@@ -1,2 +1,5 @@
-package PACKAGE_NAME;public class IdadeInvalidaException {
+public class IdadeInvalidaException extends Exception {
+    public IdadeInvalidaException(String mensagem) {
+        super(mensagem);
+    }
 }
