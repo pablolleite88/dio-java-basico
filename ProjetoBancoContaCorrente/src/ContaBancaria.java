@@ -40,7 +40,8 @@ public class ContaBancaria {
 
     public String pagarBoleto(double valor) {
         if (saldo >= valor) {
-            saldo = saldo - valor;
+            saldo -= valor;
+            cobrarTaxaChequeEspecial();
             return "Pagamento efetuado!";
         } else {
             return "Saldo insuficiente";
@@ -49,7 +50,8 @@ public class ContaBancaria {
 
     public String sacarDinheiro(double valor) {
         if (saldo >= valor) {
-            saldo = saldo - valor;
+            saldo -= valor;
+            cobrarTaxaChequeEspecial();
             return "Saque efetuado!";
         } else {
             return "Saldo insuficiente";
@@ -58,5 +60,14 @@ public class ContaBancaria {
 
     public boolean verificarChequeEspecial() {
         return saldo < saldoOriginal;
+    }
+
+    public void cobrarTaxaChequeEspecial() {
+        if (saldo < saldoOriginal) {
+            double valorUsadoChequeEspecial = saldoOriginal - saldo;
+            double taxa = valorUsadoChequeEspecial * 0.20;
+            saldo -= taxa;
+            System.out.println("Taxa de cheque especial cobrada: R$" + taxa);
+        }
     }
 }

@@ -113,7 +113,7 @@ public class App {
     }
 
     public String sacarDinheiro(double valSaque) {
-        return conta1.pagarBoleto(valSaque);
+        return conta1.sacarDinheiro(valSaque);
     }
 
     public void depositarDinheiro(double deposito) {
