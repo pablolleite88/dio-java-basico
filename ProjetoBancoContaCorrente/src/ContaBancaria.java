@@ -1,11 +1,13 @@
 public class ContaBancaria {
 
+    private double saldoOriginal; // Saldo sem o cheque especial
     private double saldo;
     private double chequeEspecial;
 
-    public ContaBancaria(double chequeEspecial, double saldo) {
+    public ContaBancaria(double chequeEspecial, double depositoInicial) {
         this.chequeEspecial = chequeEspecial;
-        this.saldo = saldo;
+        this.saldoOriginal = depositoInicial;
+        this.saldo = depositoInicial + chequeEspecial;
     }
 
     public double getSaldo() {
@@ -25,7 +27,7 @@ public class ContaBancaria {
     }
 
     public double consultarSaldo() {
-        return saldo + chequeEspecial;
+        return saldo ;
     }
 
     public double consultarChequeEspecial() {
@@ -34,5 +36,27 @@ public class ContaBancaria {
     
     public void depositarDinheiro(double valor) {
         saldo = saldo + valor;
+    }
+
+    public String pagarBoleto(double valor) {
+        if (saldo >= valor) {
+            saldo = saldo - valor;
+            return "Pagamento efetuado!";
+        } else {
+            return "Saldo insuficiente";
+        }
+    }
+
+    public String sacarDinheiro(double valor) {
+        if (saldo >= valor) {
+            saldo = saldo - valor;
+            return "Saque efetuado!";
+        } else {
+            return "Saldo insuficiente";
+        }
+    }
+
+    public boolean verificarChequeEspecial() {
+        return saldo < saldoOriginal;
     }
 }

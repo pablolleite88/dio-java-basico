@@ -14,6 +14,8 @@ public class App {
         int opcao;
         double saldo;
         double deposito;
+        double valBoleto;
+        double valSaque;
 
         do {
             System.out.println("=== Menu Banco ===");
@@ -45,14 +47,45 @@ public class App {
                     }
                 }
                 case 3 -> {
-                    System.out.println("Informe o valor a depositar: ");
-                    deposito = scanner.nextDouble();
-                    depositarDinheiro(deposito);
+                    if (conta1 != null) {
+                        System.out.println("Informe o valor a depositar: ");
+                        deposito = scanner.nextDouble();
+                        depositarDinheiro(deposito);
+                    } else {
+                        System.out.println("Conta não aberta.");
+                    }
                 }
                 case 4 -> {
+                    if (conta1 != null) {
+                        System.out.println("Digite o valor do saque: ");
+                        valSaque = scanner.nextDouble();
+                        String resultado = sacarDinheiro(valSaque);
+                        System.out.println(resultado);
+                    } else {
+                        System.out.println("Conta não aberta.");
+                    }
                 }
-                case 5 -> System.out.println("Funcionalidade não implementada.");
-                case 6 -> System.out.println("Funcionalidade não implementada.");
+                case 5 -> {
+                    if (conta1 != null) {
+                        System.out.println("Digite o valor do boleto: ");
+                        valBoleto = scanner.nextDouble();
+                        String resultado = pagarBoleto(valBoleto);
+                        System.out.println(resultado);
+                    } else {
+                        System.out.println("Conta não aberta.");
+                    }
+                }
+                case 6 -> {
+                    if (conta1 != null) {
+                        if (conta1.verificarChequeEspecial()) {
+                            System.out.println("Você está usando o cheque especial.");
+                        } else {
+                            System.out.println("Você não está usando o cheque especial.");
+                        }
+                    } else {
+                        System.out.println("Conta não aberta.");
+                    }
+                }
                 case 7 -> {
                     System.out.println("Informe o depósito inicial: ");
                     saldo = scanner.nextDouble();
@@ -73,6 +106,14 @@ public class App {
         }
         conta1 = new ContaBancaria(chequeEspecial, valor);
         System.out.println("Conta aberta com sucesso!");
+    }
+
+    public String pagarBoleto(double valBoleto) {
+        return conta1.pagarBoleto(valBoleto);
+    }
+
+    public String sacarDinheiro(double valSaque) {
+        return conta1.pagarBoleto(valSaque);
     }
 
     public void depositarDinheiro(double deposito) {
